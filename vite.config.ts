@@ -1,7 +1,7 @@
+import ui from "@nuxt/ui/vite";
 import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
-import AutoImport from "unplugin-auto-import/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -12,15 +12,32 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    AutoImport({
-      imports: ["vue", "vue-router", "pinia"],
-      dts: true,
-      vueTemplate: true,
-      dirs: ["./src/views/*/stores"],
-      eslintrc: {
-        enabled: true,
+    tailwindcss(),
+    ui({
+      // Configure auto-import through Nuxt UI's options
+      autoImport: {
+        imports: ["vue", "vue-router", "pinia"],
+        vueTemplate: true,
+        dirs: [
+          "./src/views/*/stores",
+          "./src/components",
+          "./src/views/*/components",
+          "./src/layout",
+        ],
+        eslintrc: {
+          enabled: true,
+        },
+      },
+      // Configure components auto-import through Nuxt UI's options
+      components: {
+        dirs: ["src/components", "src/views/*/components", "src/layout"],
+        dts: "components.d.ts",
+      },
+      ui: {
+        colors: {
+          primary: "yellow",
+        },
       },
     }),
-    tailwindcss(),
   ],
 });

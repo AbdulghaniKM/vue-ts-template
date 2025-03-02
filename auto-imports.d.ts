@@ -8,23 +8,36 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const avatarGroupInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useAvatarGroup.js')['avatarGroupInjectionKey']
+  const buttonGroupInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['buttonGroupInjectionKey']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
   const customRef: typeof import('vue')['customRef']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
+  const defineLocale: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineLocale.js')['defineLocale']
+  const defineShortcuts: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['defineShortcuts']
   const defineStore: typeof import('pinia')['defineStore']
   const effectScope: typeof import('vue')['effectScope']
+  const extractShortcuts: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['extractShortcuts']
+  const formBusInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formBusInjectionKey']
+  const formFieldInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formFieldInjectionKey']
+  const formInputsInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formInputsInjectionKey']
+  const formLoadingInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formLoadingInjectionKey']
+  const formOptionsInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formOptionsInjectionKey']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
+  const inputIdInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['inputIdInjectionKey']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const kbdKeysMap: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['kbdKeysMap']
+  const localeContextInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['localeContextInjectionKey']
   const mapActions: typeof import('pinia')['mapActions']
   const mapGetters: typeof import('pinia')['mapGetters']
   const mapState: typeof import('pinia')['mapState']
@@ -65,17 +78,27 @@ declare global {
   const toValue: typeof import('vue')['toValue']
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
+  const useAppConfig: typeof import('./node_modules/@nuxt/ui/dist/runtime/vue/composables/useAppConfig.js')['useAppConfig']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAvatarGroup: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useAvatarGroup.js')['useAvatarGroup']
+  const useButtonGroup: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['useButtonGroup']
+  const useComponentIcons: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useComponentIcons.js')['useComponentIcons']
+  const useCounterStore: typeof import('./src/views/Counter/stores/counter')['useCounterStore']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useFormField: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['useFormField']
   const useHomeStore: typeof import('./src/views/Home/stores/homeStore')['useHomeStore']
   const useId: typeof import('vue')['useId']
+  const useKbd: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['useKbd']
   const useLink: typeof import('vue-router')['useLink']
+  const useLocale: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['useLocale']
   const useModel: typeof import('vue')['useModel']
+  const useOverlay: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useOverlay.js')['useOverlay']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
+  const useToast: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useToast.js')['useToast']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -86,6 +109,21 @@ declare global {
   // @ts-ignore
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
+  // @ts-ignore
+  export type { ShortcutConfig, ShortcutsConfig, ShortcutsOptions } from './node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.d'
+  import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.d')
+  // @ts-ignore
+  export type { UseComponentIconsProps } from './node_modules/@nuxt/ui/dist/runtime/composables/useComponentIcons.d'
+  import('./node_modules/@nuxt/ui/dist/runtime/composables/useComponentIcons.d')
+  // @ts-ignore
+  export type { KbdKey, KbdKeySpecific } from './node_modules/@nuxt/ui/dist/runtime/composables/useKbd.d'
+  import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.d')
+  // @ts-ignore
+  export type { OverlayOptions, Overlay } from './node_modules/@nuxt/ui/dist/runtime/composables/useOverlay.d'
+  import('./node_modules/@nuxt/ui/dist/runtime/composables/useOverlay.d')
+  // @ts-ignore
+  export type { Toast } from './node_modules/@nuxt/ui/dist/runtime/composables/useToast.d'
+  import('./node_modules/@nuxt/ui/dist/runtime/composables/useToast.d')
 }
 
 // for vue template auto import
@@ -95,23 +133,36 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly avatarGroupInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useAvatarGroup.js')['avatarGroupInjectionKey']>
+    readonly buttonGroupInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['buttonGroupInjectionKey']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineLocale: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineLocale.js')['defineLocale']>
+    readonly defineShortcuts: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['defineShortcuts']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly extractShortcuts: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['extractShortcuts']>
+    readonly formBusInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formBusInjectionKey']>
+    readonly formFieldInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formFieldInjectionKey']>
+    readonly formInputsInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formInputsInjectionKey']>
+    readonly formLoadingInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formLoadingInjectionKey']>
+    readonly formOptionsInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formOptionsInjectionKey']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly inputIdInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['inputIdInjectionKey']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly kbdKeysMap: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['kbdKeysMap']>
+    readonly localeContextInjectionKey: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['localeContextInjectionKey']>
     readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
     readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
     readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
@@ -152,17 +203,26 @@ declare module 'vue' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAppConfig: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/vue/composables/useAppConfig.js')['useAppConfig']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useAvatarGroup: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useAvatarGroup.js')['useAvatarGroup']>
+    readonly useButtonGroup: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['useButtonGroup']>
+    readonly useComponentIcons: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useComponentIcons.js')['useComponentIcons']>
+    readonly useCounterStore: UnwrapRef<typeof import('./src/views/Counter/stores/counter')['useCounterStore']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
-    readonly useHomeStore: UnwrapRef<typeof import('./src/views/Home/stores/homeStore')['useHomeStore']>
+    readonly useFormField: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['useFormField']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
+    readonly useKbd: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['useKbd']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useLocale: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['useLocale']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly useOverlay: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useOverlay.js')['useOverlay']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
+    readonly useToast: UnwrapRef<typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useToast.js')['useToast']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
